@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéDex - API Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assert/css/styles.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark bg-primary mb-4">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1">PokéAPI Demo: XHR vs Fetch</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body text-center">
+                <h5 class="card-title mb-3">Selecciona el método de petición</h5>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-secondary" onclick="getDataXHR()">
+                        1. XHR (Legacy)
+                    </button>
+                    <button type="button" class="btn btn-success" onclick="getDataFetch()">
+                        2. Fetch (Promesas)
+                    </button>
+                    <button type="button" class="btn btn-warning text-dark" onclick="getDataAsync()">
+                        3. Async/Await
+                    </button>
+                </div>
+                <button class="btn btn-danger ms-2" onclick="clearData()">Limpiar</button>
+            </div>
+        </div>
+
+        <div id="cards-container" class="row row-cols-1 row-cols-md-3 g-4">
+        </div>
+    </div>
+
+    <div id="loading-overlay" class="d-none">
+        <div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Cargando...</span>
+        </div>
+        <p class="text-light mt-3 fs-4">Consultando PokéAPI...</p>
+    </div>
+
+    <script src="assert/js/utils.js"></script>
+    <script src="assert/js/app.js"></script>
+</body>
+</html>
